@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6832052296316922054}
   - component: {fileID: 1146638697989967277}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2277f7dab667d2742a024e8f6a576fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  duration: 5
+  speedToAdd: 3
+  duration: 10
   visuals: {fileID: 5439924651585271191}
 --- !u!135 &1146638697989967277
 SphereCollider:

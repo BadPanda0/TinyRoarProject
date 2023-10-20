@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
     public float speedToAdd = 1f;
     public float duration = 1f;

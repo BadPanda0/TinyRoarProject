@@ -23,6 +23,7 @@ public class WalkToLocationState : IState
 
     public void OnEnter()
     {
+        _lastposition = Vector3.zero;
         _navMeshAgent.enabled = true;
         _navMeshAgent.SetDestination(_npc.Target);
         //set animator speed
