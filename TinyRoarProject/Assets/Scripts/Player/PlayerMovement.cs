@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, ISpeedAdjustable, IStunnable
 {
     private CharacterController characterController;
     public Transform cam;
@@ -12,15 +12,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    private bool _isStunned = false;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if  (speed > 0)
+        if  (!_isStunned)
         {
             Vector3 direction = new Vector3(input.Horizontal, 0, input.Vertical).normalized;
 
@@ -38,5 +40,30 @@ public class PlayerMovement : MonoBehaviour
         {
             //stunned
         }
+    }
+
+    public void TriggerManipulateSpeed(float amount, float duration)
+    {
+        StartCoroutine(ManipulateSpeed(amount, duration));
+    }
+
+    public IEnumerator ManipulateSpeed(float amount, float duration)
+    {
+        speed += amount;
+        yield return new WaitForSeconds(duration);
+        speed -= amount;
+    }
+
+    public void TriggerStun(float duration)
+    {
+        StopCoroutine("Stun");
+        StartCoroutine(Stun(duration));
+    }
+
+    public IEnumerator Stun(float duration)
+    {
+        _isStunned = true;
+        yield return new WaitForSeconds(duration);
+        _isStunned = false;
     }
 }

@@ -1,43 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-public class Collectable : MonoBehaviour
+public abstract class Collectable : MonoBehaviour
 {
-    public float speedToAdd = 1f;
-    public float duration = 1f;
+    [SerializeField]public float Duration = 1f;
 
-    [SerializeField] private GameObject visuals;
-    private bool active = true;
-
-    public void Setup(Vector3 transform)
+    private void OnEnable()
     {
-        gameObject.transform.position = transform;
-        visuals.SetActive(true);
-        gameObject.SetActive(true);
-        active = true;
+        float randomDuration = Random.Range(50, 80);
+        StartCoroutine(DisableAfterSeconds(randomDuration));
     }
 
-    private void OnTriggerEnter(Collider other)
+    public IEnumerator DisableAfterSeconds(float duration)
     {
-        if (active)
-        {
-            PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
-            {
-                visuals.SetActive(false);
-                active = false;
-                StartCoroutine(SetSpeed(playerMovement));
-            }
-        }
-    }
-
-    IEnumerator SetSpeed(PlayerMovement playerMovement)
-    {
-        playerMovement.speed += speedToAdd;
         yield return new WaitForSeconds(duration);
-        playerMovement.speed -= speedToAdd;
-        gameObject.SetActive(false);
-        // return to pool
+        ReturnToPool();
     }
+
+    public abstract void ReturnToPool();
+
 }

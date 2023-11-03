@@ -9,19 +9,10 @@ public class NpcScoreTrigger : MonoBehaviour
         Npc npc = other.GetComponent<Npc>();
         if (npc != null)
         {
-            //points to add
+            ScoreManager.instance.ManipulateScore(npc.ScoreToAdd);
+            NpcPool.Instance.ReturnToPool(npc);
+            NpcManager.Instance.StartCoroutine(NpcManager.Instance.SpawnNpcAfterDelay());
         }
 
     }
-
-    private void AddPoints(float pointsToAdd)
-    {
-        //add points to manager
-    }
-
-    private void ReturnToPool(Npc npc)
-    {
-        //Return to pool
-    }
-
 }

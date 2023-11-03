@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
     private PlayerInput _playerInput;
-    public GameObject HeldObject = null;
+    [NonSerialized]public GameObject HeldObject = null;
     private readonly Collider[] _colliders = new Collider[3];
-    [SerializeField] private int _numFound;
+    private int _numFound;
 
     [SerializeField] private Transform _interactionTransform;
     [SerializeField] private float _interactionRadius = 3f;
