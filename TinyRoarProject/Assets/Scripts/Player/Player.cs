@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,9 @@ public class Player : MonoBehaviour
 
     public static Player Instance;
 
-    public PlayerInput PlayerInput;
-    public PlayerInteract PlayerInteract;
-    public PlayerMovement PlayerMovement;
+    [NonSerialized] public PlayerInput PlayerInput;
+    [NonSerialized] public PlayerInteract PlayerInteract;
+    [NonSerialized] public PlayerMovement PlayerMovement;
 
     private void Awake()
     {

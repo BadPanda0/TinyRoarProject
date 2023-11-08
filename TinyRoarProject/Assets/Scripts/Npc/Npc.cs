@@ -19,7 +19,7 @@ public class Npc : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-       
+       _rb.freezeRotation = true;
     }
 
     private void OnEnable()

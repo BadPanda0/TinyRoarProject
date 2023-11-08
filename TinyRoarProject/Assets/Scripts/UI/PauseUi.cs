@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class PauseUi : MonoBehaviour
 {
 
-
-
     public void Hide()
     {
         gameObject.SetActive(false);
@@ -27,6 +25,7 @@ public class PauseUi : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
     }
 
     public void Unpause()

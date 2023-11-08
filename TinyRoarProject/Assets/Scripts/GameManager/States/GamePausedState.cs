@@ -22,7 +22,6 @@ public class GamePausedState : IState
         _pauseUi.Show();
 
         _gameManager.InvokeStateChanged();
-
     }
 
     public void OnExit()
