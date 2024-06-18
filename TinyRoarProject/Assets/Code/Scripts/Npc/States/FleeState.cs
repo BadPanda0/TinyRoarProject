@@ -15,7 +15,7 @@ public class FleeState : IState
     //private static int FleeHash = Animator.StringToHash("Flee");
 
     private float _initialSpeed;
-    private const float FLEE_SPEED = 6f;
+    private const float FLEE_SPEED = 5f;
     private const float FLEE_DISTANCE = 5f;
 
     public FleeState(Npc npc, PlayerDetector playerDetector, NavMeshAgent navMeshAgent, Animator animator)
@@ -28,7 +28,7 @@ public class FleeState : IState
     public void OnEnter()
     {
         _navMeshAgent.enabled = true;
-        //_animator.SetBool(FleeHash, true);
+        _animator.SetFloat("SpeedF", 1f);
         _initialSpeed = _navMeshAgent.speed;
         _navMeshAgent.speed = FLEE_SPEED;
     }
@@ -38,7 +38,7 @@ public class FleeState : IState
         _navMeshAgent.speed = _initialSpeed;
         _navMeshAgent.enabled = false;
         _npc.Target = Vector3.zero;
-        //_animator.SetBool(FleeHash, false);
+        _animator.SetFloat("SpeedF", 0f);
     }
 
     public void Tick()

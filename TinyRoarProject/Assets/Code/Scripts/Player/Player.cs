@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [NonSerialized] public PlayerInteract PlayerInteract;
     [NonSerialized] public PlayerMovement PlayerMovement;
 
+    [SerializeField] public PlayerSoundManager PlayerSoundManager;
+
     private void Awake()
     {
 

@@ -1,0 +1,4 @@
+repository "Puzzle Passion@WaifuGames@cloud"
+  path "/"
+    br "/main"
+    co "/main"

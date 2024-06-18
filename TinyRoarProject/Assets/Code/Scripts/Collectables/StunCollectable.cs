@@ -9,6 +9,9 @@ public class StunCollectable : Collectable
         if (stunnable != null)
         {
             stunnable.TriggerStun(Duration);
+
+            AudioToPlay.PlayAudio();
+
             ReturnToPool();
         }
     }

@@ -91,6 +91,9 @@ public class PlayerMovement : MonoBehaviour, ISpeedAdjustable, IStunnable
     public void TriggerStun(float duration)
     {
         StopCoroutine("Stun");
+
+        Player.Instance.PlayerSoundManager.PlaySound(Player.Instance.PlayerSoundManager.Stunned);
+
         StartCoroutine(Stun(duration));
     }
 

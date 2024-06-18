@@ -8,27 +8,33 @@ public class StunnedState : IState
 
     private Animator _animator;
     private PlayerDetector _playerDetector;
+    private NpcSoundManager _soundManager;
 
     private float _waitTime = 3f;
     private float _currentWaitTime;
 
 
-    public StunnedState(Animator animator, PlayerDetector playerDetector)
+    public StunnedState(Animator animator, PlayerDetector playerDetector, NpcSoundManager soundManager)
     {
         _animator = animator;
         _playerDetector = playerDetector;
+        _soundManager = soundManager;
     }
 
     public void OnEnter()
     {
         _currentWaitTime = 0f;
-       //start anim
+
+        _soundManager.PlaySound(_soundManager.Stunned);
+
+        _animator.SetBool("StunnedB", true);
     }
 
     public void OnExit()
     {
         WasStunned = false;
         _playerDetector.enabled = true;
+        _animator.SetBool("StunnedB", false);
     }
 
     public void Tick()

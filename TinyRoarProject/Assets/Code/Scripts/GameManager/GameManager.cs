@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [NonSerialized] public bool GamePaused = false;
 
+    [Header("Sounds")]
+    [SerializeField] public GameSoundManager SoundManager;
+
     [Header("Time")]
     [SerializeField] public float WaitingToStartTime = 1f;
     [SerializeField] public float CountdownToStartTime = 3f;
@@ -37,10 +40,10 @@ public class GameManager : MonoBehaviour
         _stateMaschine = new StateMaschine();
 
         var waitingToStart = new WaitingToStartState(this, WaitingToStartTime, _beforeCountdownUi);
-        var countdownToStart = new CountdownToStartState(this, CountdownToStartTime, _countdownUi);
+        var countdownToStart = new CountdownToStartState(this, CountdownToStartTime, _countdownUi, SoundManager);
         var gamePlaying = new GamePlayingState(this, GamePlayingTime, _gameUi);
         var gamePaused = new GamePausedState(this, _pauseUi);
-        var gameOver = new GameOverState(this, _gameOverUi, _gameUi, _pauseUi);
+        var gameOver = new GameOverState(this, _gameOverUi, _gameUi, _pauseUi, SoundManager);
 
         AddTransition(waitingToStart, countdownToStart, IsWaitingToStartFinished());
         AddTransition(countdownToStart, gamePlaying, IsCountdownToStartFinished());

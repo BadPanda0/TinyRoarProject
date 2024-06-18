@@ -8,6 +8,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a30499e47789df48aa9bdb1ec7b0982, type: 3}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d7e7e6569aab5a45a837f470eaddc8b, type: 3}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31be579b280d0bc459635877e8c45aee, type: 3}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 6399892149904943161}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 2435679331848431919}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _soundManager
+      value: 
+      objectReference: {fileID: 5563154023483777396}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 107488f098a45f842bf36e95e24a3cd9, type: 3}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d289641f982e6f34d89980a3d121c8cb, type: 3}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 266a231b9c9a77e4ba15a0c661c68588, type: 3}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f0677f71593950498a3bce26715132f, type: 3}
     - target: {fileID: 6826821199705524765, guid: 8568c0c6d49e4414f8682aac86d9bc65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 8336074063919339873, guid: 8568c0c6d49e4414f8682aac86d9bc65,
         type: 3}
       propertyPath: m_Name
-      value: Npc_Taipan Variant
+      value: Npc_Taipan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -73,6 +133,30 @@ PrefabInstance:
       addedObject: {fileID: 1687236839801781678}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8568c0c6d49e4414f8682aac86d9bc65, type: 3}
+--- !u!114 &2622240340648910322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+    type: 3}
+  m_PrefabInstance: {fileID: 2603818240336199960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5a89863aa04d84b905d647a02e62d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8238239496729530661 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+    type: 3}
+  m_PrefabInstance: {fileID: 2603818240336199960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5a89863aa04d84b905d647a02e62d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8835819832564894469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6826821199705524765, guid: 8568c0c6d49e4414f8682aac86d9bc65,
@@ -91,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Taipan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807929556901506227, guid: 5b5c678f31981e34f9122b87217da1ac,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8999338503545881367, guid: 5b5c678f31981e34f9122b87217da1ac,
         type: 3}
@@ -150,6 +239,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2435679331848431919}
+    - targetCorrespondingSourceObject: {fileID: 4807929556901506227, guid: 5b5c678f31981e34f9122b87217da1ac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5563154023483777396}
   m_SourcePrefab: {fileID: 100100000, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
 --- !u!4 &1687236839801781678 stripped
 Transform:
@@ -186,3 +279,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5563154023483777396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969952646078157322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463a08552129f54ea9f9213e459704a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footstep: {fileID: 2622240340648910322}
+  Idle: {fileID: 8238239496729530661}
+--- !u!95 &6399892149904943161 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3701583169001772672, guid: 5b5c678f31981e34f9122b87217da1ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 7750226873120947897}
+  m_PrefabAsset: {fileID: 0}

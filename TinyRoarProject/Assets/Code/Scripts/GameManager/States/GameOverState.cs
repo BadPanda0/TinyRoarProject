@@ -9,13 +9,15 @@ public class GameOverState : IState
     private GameUi _gameUi;
     private PauseUi _pauseUi;
     private GameOverUi _gameOverUi;
+    private GameSoundManager _soundManager;
 
-    public GameOverState(GameManager gameManager, GameOverUi gameOverUi, GameUi gameUi, PauseUi pauseUi)
+    public GameOverState(GameManager gameManager, GameOverUi gameOverUi, GameUi gameUi, PauseUi pauseUi, GameSoundManager soundManager)
     {
         _gameManager = gameManager;
         _gameOverUi = gameOverUi;
         _gameUi = gameUi;
         _pauseUi = pauseUi;
+        _soundManager = soundManager;
     }
 
     public void OnEnter()
@@ -27,6 +29,8 @@ public class GameOverState : IState
         Player.Instance.PlayerInput.DisableMovement();
 
         _gameManager.InvokeStateChanged();
+
+        _soundManager.PlaySound(_soundManager.GameOver);
     }
 
     public void OnExit()

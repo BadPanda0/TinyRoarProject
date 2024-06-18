@@ -10,7 +10,9 @@ public class Npc : MonoBehaviour, IInteractable
     public bool BeingHold = false;
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private NpcSoundManager _soundManager;
     [SerializeField] private Rigidbody _rb;
+    [SerializeField] private Collider _collider;
     [SerializeField] private PlayerDetector _playerDetector;
     private NavMeshAgent _navMeshAgent;
     private StateMaschine _stateMaschine;
@@ -24,6 +26,9 @@ public class Npc : MonoBehaviour, IInteractable
 
     private void OnEnable()
     {
+
+        _soundManager.StartCoroutine(_soundManager.RandomIdleSounds());
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _stateMaschine = new StateMaschine();
 
@@ -31,9 +36,9 @@ public class Npc : MonoBehaviour, IInteractable
         var walkToLocation = new WalkToLocationState(this, _navMeshAgent, _animator);
         var wait = new WaitState(_animator);
         var flee = new FleeState(this, _playerDetector, _navMeshAgent, _animator);
-        var carryed = new CarryedState(this, _navMeshAgent, _animator, _rb, _playerDetector);
-        var throwed = new ThrowedState(this, _animator, _rb);
-        var stunned = new StunnedState(_animator, _playerDetector);
+        var carryed = new CarryedState(this, _navMeshAgent, _animator, _rb, _playerDetector, _collider);
+        var throwed = new ThrowedState(this, _animator, _rb, _collider);
+        var stunned = new StunnedState(_animator, _playerDetector, _soundManager);
 
         AddTransition(getRandomLocation, walkToLocation, HasTarget());
         AddTransition(walkToLocation, getRandomLocation, IsStuck());
@@ -64,6 +69,11 @@ public class Npc : MonoBehaviour, IInteractable
         Func<bool> WasStunned() => () => stunned.WasStunned;
     }
 
+    private void OnDisable()
+    {
+        _soundManager.StopAllCoroutines();
+    }
+
     private void Update() => _stateMaschine.Tick();
 
     public void Interact(PlayerInteract playerInteract)
@@ -71,7 +81,7 @@ public class Npc : MonoBehaviour, IInteractable
         BeingHold = !BeingHold;
         if(BeingHold)
         {
-            playerInteract.HeldObject = this.gameObject;
+            playerInteract.HeldObject = gameObject;
         }
         else
         {

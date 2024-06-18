@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class GenericObjectPool<TypeToPool> : MonoBehaviour where TypeToPool : Component 
 {
-    [SerializeField] private TypeToPool _prefab;
+    [SerializeField] private TypeToPool[] _prefab;
 
     public static GenericObjectPool<TypeToPool> Instance { get; private set; }
     private Queue<TypeToPool> _objects = new Queue<TypeToPool>();
@@ -29,7 +29,7 @@ public abstract class GenericObjectPool<TypeToPool> : MonoBehaviour where TypeTo
 
     private void AddObjects(int count)
     {
-        var newObject = GameObject.Instantiate(_prefab);
+        var newObject = GameObject.Instantiate(_prefab[Random.Range(0, _prefab.Length - 1)]);
         newObject.gameObject.SetActive(false);
         _objects.Enqueue(newObject);
     }

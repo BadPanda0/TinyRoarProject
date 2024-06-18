@@ -14,34 +14,49 @@ public class ThrowedState : IState
 
     public bool Landed = false;
 
-    public ThrowedState(Npc npc,Animator animator, Rigidbody rigidbody) 
+    //Collider
+    private Collider _collider;
+    private float _currentWaitTime;
+    private float _waitTime = 0.5f;
+
+
+    public ThrowedState(Npc npc,Animator animator, Rigidbody rigidbody, Collider collider) 
     {
         _npc = npc;
         _animator = animator;
         _rb = rigidbody;
+        _collider = collider;
     }
 
     public void OnEnter()
     {
+        Landed = false;
+        _currentWaitTime = 0f;
         _rb.useGravity = true;
-        _rb.velocity = (_npc.transform.forward * _force) + (_npc.transform.up * 6f);
+        _rb.velocity = (_npc.transform.right * _force) + (_npc.transform.up * 6f);
         //animation
     }
 
     public void OnExit()
     {
         _rb.useGravity = false;
-        //_rb.velocity = Vector3.zero;
+        _rb.velocity = Vector3.zero;
+        _animator.SetBool("CarryedB", false);
     }
 
     public void Tick()
     {
-        if(_rb.useGravity)
+        if ( _currentWaitTime < _waitTime )
         {
-            if (_rb.velocity.magnitude <= 0.01)
+            _currentWaitTime += Time.deltaTime;
+            if (_currentWaitTime > _waitTime)
             {
-                Landed = true;
+                _collider.enabled = true;
             }
+        }
+        else
+        {
+        Landed = Physics.Raycast(_npc.transform.position, Vector3.down, 0.1f, LayerMask.GetMask("Ground"));
         }
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine.Pool;
 
 public abstract class Collectable : MonoBehaviour
 {
-    [SerializeField]public float Duration = 1f;
+    [SerializeField] public float Duration = 1f;
+    [SerializeField] public AudioSound AudioToPlay;
 
     private void OnEnable()
     {

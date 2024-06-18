@@ -23,6 +23,17 @@ public class PlayerInteract : MonoBehaviour
         _playerInput.OnInteract += Interact;
     }
 
+    private void Update()
+    {
+        if (HeldObject)
+        {
+            HeldObject.transform.position = _handTransform.position;
+            HeldObject.transform.rotation = _handTransform.rotation;
+        }
+        else
+            _numFound = Physics.OverlapSphereNonAlloc(_interactionTransform.position, _interactionRadius, _colliders, _interactableMask);
+    }
+
     private void Interact()
     {
         IInteractable interactable = CanInteract();
@@ -30,6 +41,8 @@ public class PlayerInteract : MonoBehaviour
         if (interactable != null)
         {
             interactable.Interact(this);
+
+            PlayAudio();
 
             _animController.SetBool(PlayerAnimationController.Parameter.IsCarryingB, HeldObject);
         }
@@ -58,14 +71,15 @@ public class PlayerInteract : MonoBehaviour
 
     }
 
-    private void Update()
+    private void PlayAudio()
     {
         if (HeldObject)
         {
-            HeldObject.transform.position = _handTransform.position;
-            HeldObject.transform.rotation = this.gameObject.transform.rotation;
+            Player.Instance.PlayerSoundManager.PlaySound(Player.Instance.PlayerSoundManager.Interact);
         }
         else
-            _numFound = Physics.OverlapSphereNonAlloc(_interactionTransform.position, _interactionRadius, _colliders, _interactableMask);
+        {
+            Player.Instance.PlayerSoundManager.PlaySound(Player.Instance.PlayerSoundManager.Throw);
+        }
     }
 }

@@ -8,6 +8,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a30499e47789df48aa9bdb1ec7b0982, type: 3}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d7e7e6569aab5a45a837f470eaddc8b, type: 3}
+    - target: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31be579b280d0bc459635877e8c45aee, type: 3}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1481797948735306780}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 4174175191659175484}
+    - target: {fileID: 528392555492532960, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _soundManager
+      value: 
+      objectReference: {fileID: 8596722552309998347}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0860528bd7384a54eac3aa74bf6b5fbc, type: 3}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 38ea8d0735efccf40aa3247a75ce3760, type: 3}
+    - target: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+        type: 3}
+      propertyPath: _audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8649495609f1fb04ca5627770647fe24, type: 3}
     - target: {fileID: 6826821199705524765, guid: 8568c0c6d49e4414f8682aac86d9bc65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 8336074063919339873, guid: 8568c0c6d49e4414f8682aac86d9bc65,
         type: 3}
       propertyPath: m_Name
-      value: Npc_Muskrat Variant
+      value: Npc_Muskrat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -73,6 +128,30 @@ PrefabInstance:
       addedObject: {fileID: 7157039211463963600}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8568c0c6d49e4414f8682aac86d9bc65, type: 3}
+--- !u!114 &2365269540310634984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 19860850298838250, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+    type: 3}
+  m_PrefabInstance: {fileID: 2347975521473367298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5a89863aa04d84b905d647a02e62d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8566737661295828287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6230314229690535997, guid: 8568c0c6d49e4414f8682aac86d9bc65,
+    type: 3}
+  m_PrefabInstance: {fileID: 2347975521473367298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5a89863aa04d84b905d647a02e62d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9090536729898010399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6826821199705524765, guid: 8568c0c6d49e4414f8682aac86d9bc65,
@@ -142,6 +221,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muskrat
       objectReference: {fileID: 0}
+    - target: {fileID: 4950779065795438720, guid: 8cb75dc2fdd63734988b8358f1314d25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -150,7 +234,17 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4174175191659175484}
+    - targetCorrespondingSourceObject: {fileID: 4950779065795438720, guid: 8cb75dc2fdd63734988b8358f1314d25,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8596722552309998347}
   m_SourcePrefab: {fileID: 100100000, guid: 8cb75dc2fdd63734988b8358f1314d25, type: 3}
+--- !u!95 &1481797948735306780 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9165535137218041895, guid: 8cb75dc2fdd63734988b8358f1314d25,
+    type: 3}
+  m_PrefabInstance: {fileID: 7756010853777482811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3392989062134910139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4950779065795438720, guid: 8cb75dc2fdd63734988b8358f1314d25,
@@ -180,6 +274,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8596722552309998347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392989062134910139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1463a08552129f54ea9f9213e459704a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footstep: {fileID: 2365269540310634984}
+  Idle: {fileID: 8566737661295828287}
 --- !u!4 &7157039211463963600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 644027910916855787, guid: 8cb75dc2fdd63734988b8358f1314d25,

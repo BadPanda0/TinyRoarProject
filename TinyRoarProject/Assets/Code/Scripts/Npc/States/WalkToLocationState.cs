@@ -26,7 +26,7 @@ public class WalkToLocationState : IState
         _lastposition = Vector3.zero;
         _navMeshAgent.enabled = true;
         _navMeshAgent.SetDestination(_npc.Target);
-        //set animator speed
+        _animator.SetFloat("SpeedF", 0.5f);
     }
 
     public void OnExit()
@@ -34,7 +34,7 @@ public class WalkToLocationState : IState
         StuckTime = 0f;
         _navMeshAgent.enabled = false;
         _npc.Target = Vector3.zero;
-        //set animator speed 0
+        _animator.SetFloat("SpeedF", 0f);
     }
 
     public void Tick()

@@ -11,6 +11,9 @@ public class SpeedCollectable : Collectable
         if (speedAdjustable != null)
         {
             speedAdjustable.TriggerManipulateSpeed(_amount, Duration);
+
+            AudioToPlay.PlayAudio();
+
             ReturnToPool();
         }
     }
